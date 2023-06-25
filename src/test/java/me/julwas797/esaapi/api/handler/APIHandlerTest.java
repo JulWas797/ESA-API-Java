@@ -7,7 +7,9 @@ import org.junit.jupiter.api.RepeatedTest;
 import org.junit.jupiter.api.Test;
 
 import java.io.BufferedReader;
+import java.io.IOException;
 import java.io.StringReader;
+import java.net.MalformedURLException;
 import java.util.ArrayList;
 import java.util.Arrays;
 import java.util.List;
@@ -37,7 +39,7 @@ class APIHandlerTest {
     }
 
     @RepeatedTest(3)
-    void testGetRawJsonData() {
+    void testGetRawJsonData() throws IOException {
         // Given
         List<String> dummyList = getRandomList();
         APIHandler apiHandler = spy(getAPIHandler());
